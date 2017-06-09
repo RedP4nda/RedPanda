@@ -31,6 +31,9 @@ Bug reports and pull requests are welcome on GitLab at [https://github.com/RedP4
 
 In order to contribute please fork the project and submit a merge request.
 
+## Contributors
+[![MrCloud](https://avatars2.githubusercontent.com/u/486140?s=100)](https://github.com/MrCloud)
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
