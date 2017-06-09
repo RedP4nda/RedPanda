@@ -1,5 +1,10 @@
 # RedPanda
 
+
+[![Build Status](https://travis-ci.org/RedP4nda/RedPanda.svg?branch=master)](https://travis-ci.org/RedP4nda/RedPanda)
+[![Twitter](https://img.shields.io/badge/twitter-@Florian_MrCloud-blue.svg?style=flat)](http://twitter.com/Florian_MrCloud)
+
+
 ## Purpose
 
 RedPanda is a tool to kickstart your iOS development flow. So you can focus faster on delivering actual features and not on configuring the project for hours. It will also provide some of the best practices in terms of iOS App Development and Clean Architecture. With a focus on maintainability and clarity. It will also provide you a great level of abstraction in order to add and replace implementation of some libraries without changing a lot of the application code.

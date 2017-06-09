@@ -22,8 +22,6 @@
 		DB29D1CE1DEAE845006792E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB29D1E21DEAF22B006792E4 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		DB29D1E31DEAF245006792E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		DB29D1E41DEAF24F006792E4 /* CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONDUCT.md; sourceTree = "<group>"; };
-		DB29D1E51DEAF24F006792E4 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		DB29D1E61DEAF267006792E4 /* Rambafile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rambafile; sourceTree = "<group>"; };
 		DB29D1E71DEAF270006792E4 /* sonar-project.properties */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sonar-project.properties"; sourceTree = "<group>"; };
 		DB3BDA101DC0A343001F27AD /* RedPanda_TEMPLATE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedPanda_TEMPLATE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +124,6 @@
 			children = (
 				DB7C5FB11E28D7020079B437 /* build-config.yml */,
 				DB29D1E31DEAF245006792E4 /* README.md */,
-				DB29D1E41DEAF24F006792E4 /* CONDUCT.md */,
-				DB29D1E51DEAF24F006792E4 /* CONTRIBUTING.md */,
 				DBB7843D1DACFBE40020E254 /* App */,
 				DBB784521DACFBE40020E254 /* Tests */,
 				DB29D1E21DEAF22B006792E4 /* fastlane */,

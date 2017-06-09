@@ -29,5 +29,8 @@ test_group_path: Tests/Modules
 podfile_path: Podfile
 
 ### Templates
+catalogs:
+- 'https://github.com/rambler-digital-solutions/generamba-catalog'
+- 'https://github.com/RedP4nda/generamba-catalog'
 templates:
-- {name: swifty_viper}
+- {name: redpanda_swift_viper}

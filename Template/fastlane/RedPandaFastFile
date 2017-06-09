@@ -11,7 +11,8 @@ platform :ios do
   end
 
   private_lane :bootstrap_redpanda do
-    sh("gem install generamba")
+    sh("bundle install --gemfile ../Gemfile")
+    sh("cd .. && generamba template install")
   end
 
   desc "download file"
@@ -24,6 +25,7 @@ platform :ios do
   lane :redpanda_hello do
     puts "initializing redpanda..."
     bootstrap_git
+    bootstrap_redpanda
     puts "initilization finished"
   end
 

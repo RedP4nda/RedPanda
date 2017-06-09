@@ -5,11 +5,11 @@
 //
 
 import UIKit
-import RedPanda
+import RPFramework
 import PluggableApplicationDelegate
 
 @UIApplicationMain
-class AppDelegate: RedPandaApplicationDelegate {
+class AppDelegate: RPApplicationDelegate {
 
     override var services: [ApplicationService] {
         return [

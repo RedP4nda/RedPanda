@@ -1,0 +1,3 @@
+source 'https://rubygems.org' do
+  gem 'generamba',  '1.4.0'
+end

@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/RedP4nda/Specs'
+source 'https://github.com/RedP4nda/Specs.git'
 
 platform :ios, '9.0'
 use_frameworks!
 
 def redpanda
-  pod 'RedPanda', '~> 0.1'
+  pod 'RPFramework', '~> 0.9'
 end
 
 def config
@@ -13,12 +13,12 @@ def config
 end
 
 def logging
-    pod 'RPLoggerz', '~> 0.1'
+    pod 'RPLoggerz', '~> 0.9'
 end
 
 def networking
-    pod 'RPHTTPServiceClient', '~> 0.1.1'
-    pod 'RPImageLoader/KingFisher', '~> 0.9.2'
+    pod 'RPHTTPServiceClient', '~> 0.9'
+    pod 'RPImageLoader/KingFisher', '~> 0.9'
 end
 
 target 'RedPanda_TEMPLATE' do
