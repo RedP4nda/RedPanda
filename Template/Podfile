@@ -1,0 +1,33 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/RedP4nda/Specs'
+
+platform :ios, '9.0'
+use_frameworks!
+
+def redpanda
+  pod 'RedPanda', '~> 0.1'
+end
+
+def config
+    pod 'Natrium', :git => 'https://github.com/MrCloud/Natrium.git'
+end
+
+def logging
+    pod 'RPLoggerz', '~> 0.1'
+end
+
+def networking
+    pod 'RPHTTPServiceClient', '~> 0.1.1'
+    pod 'RPImageLoader/KingFisher', '~> 0.9.2'
+end
+
+target 'RedPanda_TEMPLATE' do
+  redpanda
+  networking
+  logging
+  config
+end
+
+pre_install do |installer|
+    def installer.verify_no_static_framework_transitive_dependencies; end
+end

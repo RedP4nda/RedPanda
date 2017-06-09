@@ -1,0 +1,65 @@
+import "./RedPandaFastFile"
+
+fastlane_version "2.37.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    ENV["RedPanda_RUNNING_THROUGH_FASTLANE"] = "true"
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    cocoapods
+    generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: "Debug", environment: "Dev")
+    scan(scheme: "RedPanda_TEMPLATE")
+  end
+
+  desc "Build AdHoc application"
+  lane :build_adhoc do |options|
+    configuration = "AdHoc"
+    cocoapods
+    generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: configuration, environment: options[:environment])
+    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration)
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :testflight_beta_upload do
+    configuration = "Release"
+    cocoapods
+    generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: configuration, environment: "Production")
+    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration) # Build your app - more options available
+    ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
+    pilot(distribute_external: false)
+  end
+
+  desc "Builds the AppStore version of the application"
+  lane :build_appstore do
+    configuration = "Release"
+    cocoapods
+    generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: configuration, environment: "Production")
+    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration) # Build your app - more options available
+  end
+
+
+  after_all do |lane|
+
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer

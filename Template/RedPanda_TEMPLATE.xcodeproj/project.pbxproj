@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D4EF99F96DE75FC7695E595 /* Pods_RedPanda_TEMPLATE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3670B81BC135797099B126C9 /* Pods_RedPanda_TEMPLATE.framework */; };
+		DB29D1CF1DEAE845006792E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB29D1CE1DEAE845006792E4 /* Assets.xcassets */; };
+		DB29D1D01DEAEF63006792E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7843E1DACFBE40020E254 /* AppDelegate.swift */; };
+		DB29D1D11DEAEFA5006792E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB784421DACFBE40020E254 /* Main.storyboard */; };
+		DB29D1D21DEAEFA9006792E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB784471DACFBE40020E254 /* LaunchScreen.storyboard */; };
+		DB63A16D1E8EA77A001E7297 /* ApplicationLifeCycleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB63A16C1E8EA77A001E7297 /* ApplicationLifeCycleService.swift */; };
+		DB8326A51E3B8BC500A14C93 /* ExampleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8326A41E3B8BC500A14C93 /* ExampleTest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3670B81BC135797099B126C9 /* Pods_RedPanda_TEMPLATE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedPanda_TEMPLATE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49AE5D03814C8FC9C2D8BCEF /* Pods-RedPanda_TEMPLATE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedPanda_TEMPLATE.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedPanda_TEMPLATE/Pods-RedPanda_TEMPLATE.release.xcconfig"; sourceTree = "<group>"; };
+		DB29D1CE1DEAE845006792E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB29D1E21DEAF22B006792E4 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		DB29D1E31DEAF245006792E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DB29D1E41DEAF24F006792E4 /* CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONDUCT.md; sourceTree = "<group>"; };
+		DB29D1E51DEAF24F006792E4 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		DB29D1E61DEAF267006792E4 /* Rambafile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rambafile; sourceTree = "<group>"; };
+		DB29D1E71DEAF270006792E4 /* sonar-project.properties */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sonar-project.properties"; sourceTree = "<group>"; };
+		DB3BDA101DC0A343001F27AD /* RedPanda_TEMPLATE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedPanda_TEMPLATE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB63A16C1E8EA77A001E7297 /* ApplicationLifeCycleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationLifeCycleService.swift; sourceTree = "<group>"; };
+		DB7C5FB11E28D7020079B437 /* build-config.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "build-config.yml"; sourceTree = "<group>"; };
+		DB8326A41E3B8BC500A14C93 /* ExampleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTest.swift; sourceTree = "<group>"; };
+		DBB7843E1DACFBE40020E254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBB784431DACFBE40020E254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DBB784481DACFBE40020E254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBB7844A1DACFBE40020E254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBB7844F1DACFBE40020E254 /* RedPanda_TEMPLATETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedPanda_TEMPLATETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBB784551DACFBE40020E254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE84C3BDA9274D3CD4399790 /* Pods-RedPanda_TEMPLATE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedPanda_TEMPLATE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedPanda_TEMPLATE/Pods-RedPanda_TEMPLATE.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB3BDA0D1DC0A343001F27AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D4EF99F96DE75FC7695E595 /* Pods_RedPanda_TEMPLATE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBB7844C1DACFBE40020E254 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D19325DF63CAEA436B3B5CC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3FE1BB44491468B5BAD2A42E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE84C3BDA9274D3CD4399790 /* Pods-RedPanda_TEMPLATE.debug.xcconfig */,
+				49AE5D03814C8FC9C2D8BCEF /* Pods-RedPanda_TEMPLATE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		60B954331B9075985774E06E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3670B81BC135797099B126C9 /* Pods_RedPanda_TEMPLATE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEF5B35BF971065626971460 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DB29D1CD1DEAE845006792E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB29D1CE1DEAE845006792E4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DB29D1D31DEAF0B6006792E4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DB63A16B1E8EA687001E7297 /* ApplicationServices */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DB3BDA0B1DC09009001F27AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7844A1DACFBE40020E254 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB63A16B1E8EA687001E7297 /* ApplicationServices */ = {
+			isa = PBXGroup;
+			children = (
+				DB63A16C1E8EA77A001E7297 /* ApplicationLifeCycleService.swift */,
+			);
+			path = ApplicationServices;
+			sourceTree = "<group>";
+		};
+		DBB784321DACFBE40020E254 = {
+			isa = PBXGroup;
+			children = (
+				DB7C5FB11E28D7020079B437 /* build-config.yml */,
+				DB29D1E31DEAF245006792E4 /* README.md */,
+				DB29D1E41DEAF24F006792E4 /* CONDUCT.md */,
+				DB29D1E51DEAF24F006792E4 /* CONTRIBUTING.md */,
+				DBB7843D1DACFBE40020E254 /* App */,
+				DBB784521DACFBE40020E254 /* Tests */,
+				DB29D1E21DEAF22B006792E4 /* fastlane */,
+				DB29D1E61DEAF267006792E4 /* Rambafile */,
+				DB29D1E71DEAF270006792E4 /* sonar-project.properties */,
+				DBB7843C1DACFBE40020E254 /* Products */,
+				3FE1BB44491468B5BAD2A42E /* Pods */,
+				60B954331B9075985774E06E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DBB7843C1DACFBE40020E254 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBB7844F1DACFBE40020E254 /* RedPanda_TEMPLATETests.xctest */,
+				DB3BDA101DC0A343001F27AD /* RedPanda_TEMPLATE.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBB7843D1DACFBE40020E254 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DB29D1D31DEAF0B6006792E4 /* Core */,
+				3D19325DF63CAEA436B3B5CC /* Modules */,
+				DB29D1CD1DEAE845006792E4 /* Resources */,
+				DBB7843E1DACFBE40020E254 /* AppDelegate.swift */,
+				DBB784421DACFBE40020E254 /* Main.storyboard */,
+				DBB784471DACFBE40020E254 /* LaunchScreen.storyboard */,
+				DB3BDA0B1DC09009001F27AD /* Supporting Files */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DBB784521DACFBE40020E254 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DBB784551DACFBE40020E254 /* Info.plist */,
+				AEF5B35BF971065626971460 /* Modules */,
+				DB8326A41E3B8BC500A14C93 /* ExampleTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB3BDA0F1DC0A343001F27AD /* RedPanda_TEMPLATE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB3BDA1F1DC0A343001F27AD /* Build configuration list for PBXNativeTarget "RedPanda_TEMPLATE" */;
+			buildPhases = (
+				1D11F0AE6ED0855AAEBEF1BB /* [CP] Check Pods Manifest.lock */,
+				DB3BDA0C1DC0A343001F27AD /* Sources */,
+				DB3BDA0D1DC0A343001F27AD /* Frameworks */,
+				DB3BDA0E1DC0A343001F27AD /* Resources */,
+				9750A9465DBAA4FE838FE51A /* [CP] Embed Pods Frameworks */,
+				9155442652CF0CD3A5A29EE5 /* [CP] Copy Pods Resources */,
+				DB7C5FB31E28D7680079B437 /* [RedPanda] Natrium Check Config Generation */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RedPanda_TEMPLATE;
+			productName = RedPanda;
+			productReference = DB3BDA101DC0A343001F27AD /* RedPanda_TEMPLATE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DBB7844E1DACFBE40020E254 /* RedPanda_TEMPLATETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBB7845B1DACFBE40020E254 /* Build configuration list for PBXNativeTarget "RedPanda_TEMPLATETests" */;
+			buildPhases = (
+				DBB7844B1DACFBE40020E254 /* Sources */,
+				DBB7844C1DACFBE40020E254 /* Frameworks */,
+				DBB7844D1DACFBE40020E254 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RedPanda_TEMPLATETests;
+			productName = RedPandaTests;
+			productReference = DBB7844F1DACFBE40020E254 /* RedPanda_TEMPLATETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBB784331DACFBE40020E254 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0810;
+				TargetAttributes = {
+					DB3BDA0F1DC0A343001F27AD = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EBT8MWN76X;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
+					};
+					DBB7844E1DACFBE40020E254 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DBB7843A1DACFBE40020E254;
+					};
+				};
+			};
+			buildConfigurationList = DBB784361DACFBE40020E254 /* Build configuration list for PBXProject "RedPanda_TEMPLATE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBB784321DACFBE40020E254;
+			productRefGroup = DBB7843C1DACFBE40020E254 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB3BDA0F1DC0A343001F27AD /* RedPanda_TEMPLATE */,
+				DBB7844E1DACFBE40020E254 /* RedPanda_TEMPLATETests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB3BDA0E1DC0A343001F27AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB29D1D21DEAEFA9006792E4 /* LaunchScreen.storyboard in Resources */,
+				DB29D1CF1DEAE845006792E4 /* Assets.xcassets in Resources */,
+				DB29D1D11DEAEFA5006792E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBB7844D1DACFBE40020E254 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D11F0AE6ED0855AAEBEF1BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9155442652CF0CD3A5A29EE5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedPanda_TEMPLATE/Pods-RedPanda_TEMPLATE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9750A9465DBAA4FE838FE51A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedPanda_TEMPLATE/Pods-RedPanda_TEMPLATE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB7C5FB31E28D7680079B437 /* [RedPanda] Natrium Check Config Generation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[RedPanda] Natrium Check Config Generation";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${PROJECT_DIR}/Pods/Natrium/Natrium/checkbuild.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB3BDA0C1DC0A343001F27AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB29D1D01DEAEF63006792E4 /* AppDelegate.swift in Sources */,
+				DB63A16D1E8EA77A001E7297 /* ApplicationLifeCycleService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBB7844B1DACFBE40020E254 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8326A51E3B8BC500A14C93 /* ExampleTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DBB784421DACFBE40020E254 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBB784431DACFBE40020E254 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DBB784471DACFBE40020E254 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBB784481DACFBE40020E254 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB3BDA201DC0A343001F27AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE84C3BDA9274D3CD4399790 /* Pods-RedPanda_TEMPLATE.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "App/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		DB3BDA211DC0A343001F27AD /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49AE5D03814C8FC9C2D8BCEF /* Pods-RedPanda_TEMPLATE.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "App/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = AdHoc;
+		};
+		DBB784561DACFBE40020E254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBB784571DACFBE40020E254 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		DBB7845C1DACFBE40020E254 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedPanda_TEMPLATE.app/RedPanda_TEMPLATE";
+			};
+			name = Debug;
+		};
+		DBB7845D1DACFBE40020E254 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedPanda_TEMPLATE.app/RedPanda_TEMPLATE";
+			};
+			name = AdHoc;
+		};
+		DBDF809D1E28DC80005F3322 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DBDF809E1E28DC80005F3322 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49AE5D03814C8FC9C2D8BCEF /* Pods-RedPanda_TEMPLATE.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "App/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		DBDF809F1E28DC80005F3322 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedPanda_TEMPLATE.app/RedPanda_TEMPLATE";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB3BDA1F1DC0A343001F27AD /* Build configuration list for PBXNativeTarget "RedPanda_TEMPLATE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB3BDA201DC0A343001F27AD /* Debug */,
+				DB3BDA211DC0A343001F27AD /* AdHoc */,
+				DBDF809E1E28DC80005F3322 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBB784361DACFBE40020E254 /* Build configuration list for PBXProject "RedPanda_TEMPLATE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBB784561DACFBE40020E254 /* Debug */,
+				DBB784571DACFBE40020E254 /* AdHoc */,
+				DBDF809D1E28DC80005F3322 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBB7845B1DACFBE40020E254 /* Build configuration list for PBXNativeTarget "RedPanda_TEMPLATETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBB7845C1DACFBE40020E254 /* Debug */,
+				DBB7845D1DACFBE40020E254 /* AdHoc */,
+				DBDF809F1E28DC80005F3322 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBB784331DACFBE40020E254 /* Project object */;
+}

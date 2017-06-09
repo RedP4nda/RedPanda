@@ -1,0 +1,179 @@
+fastlane_version "1.104.0"
+#skip_docs
+
+default_platform :ios
+
+master_branch      = "master"
+develop_branch     = "develop"
+
+platform :ios do
+  before_all do
+  end
+
+  private_lane :bootstrap_redpanda do
+    sh("gem install generamba")
+  end
+
+  desc "download file"
+  lane :get_file do |options|
+    source      = options[:source]
+    destination = options[:destination]
+    sh("wget -O ../#{destination} #{source}")
+  end
+
+  lane :redpanda_hello do
+    puts "initializing redpanda..."
+    bootstrap_git
+    puts "initilization finished"
+  end
+
+  lane :bootstrap_git do
+    get_file(source: "https://gist.githubusercontent.com/MrCloud/05811fa3a57c6950a07d219b3d457616/raw", destination: ".gitignore")
+    sh("git init ..")
+    git_add_directory(dir: ".")
+    git_commit_with_message(message: "init commit")
+    git_create_branch(to:develop_branch, from:master_branch)
+  end
+
+  lane :metrics do
+    scan(scheme: "[SCHEME]", code_coverage: true, xcargs: "-derivedDataPath ./DerivedData", output_directory: "./reports")
+    slather(cobertura_xml: true, jenkins: true, scheme: "[SCHEME]", build_directory: "./DerivedData", output_directory: "./reports", proj: "./[PROJECT].xcodeproj")
+    sh("cd .. && lizard ./[SOURCE_FOLDER] -l swift --xml > ./reports/lizard-report.xml")
+    swiftlint(output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
+    sonar
+  end
+
+  lane :clean do
+    clear_derived_data
+    sh("cd ../build/ && rm -rf *")
+  end
+
+# Git Flow
+
+desc "create new branch"
+private_lane :git_create_branch do |options|
+  sh("git checkout -b #{options[:to]} #{options[:from]}")
+end
+
+desc "delete branch"
+private_lane :git_delete_branch do |options|
+  sh("git branch -d #{options[:branch]}")
+end
+
+desc "merge branch"
+private_lane :git_merge_branch do |options|
+  sh("git merge --no-ff #{options[:branch]} -m \"merge(release): merge from #{options[:branch]} branch\"")
+end
+
+desc "switch to branch"
+private_lane :git_switch_branch do |options|
+  sh("git checkout #{options[:branch]}")
+end
+
+desc "git create tag"
+private_lane :git_create_tag do |options|
+  sh("git tag #{options[:name]}")
+end
+
+desc "git check fore for modifications"
+private_lane :git_check_file_modified do |options|
+  sh("git diff --name-only ../#{options[:file]}") != ""
+end
+
+desc "git commit with message file"
+private_lane :git_commit_with_message_file do |options|
+  sh("git commit --cleanup=verbatim -F ../#{options[:file]}")
+end
+
+desc "git commit with message"
+private_lane :git_commit_with_message do |options|
+  sh("git commit -m \"#{options[:message]}\"")
+end
+
+desc "git add directory"
+private_lane :git_add_directory do |options|
+  sh("git add ../#{options[:dir]}")
+end
+
+desc "git remove remote branch"
+private_lane :git_remove_remote_branch do |options|
+  sh("git push #{options[:remote]} :#{options[:branch]}")
+end
+
+
+desc "init current release"
+lane :init_release do |options|
+
+  release_branch = "release/#{options[:version]}"
+
+  git_create_branch(to:release_branch, from:develop_branch)
+  version = increment_version_number(version_number: options[:version])
+  increment_build_number
+
+  git_add_directory(dir: ".")
+  git_commit_with_message(message: "Bump version number #{version}")
+
+  push_to_git_remote(
+  remote: 'origin',         # optional, default: 'origin'
+  local_branch: release_branch,  # optional, aliased by 'branch', default: 'master'
+  remote_branch: release_branch, # optional, default is set to local_branch
+  force: false
+)              # optional, default: false
+
+end
+
+desc "finish current release"
+lane :finish_release do |options|
+
+  version = options[:version]
+  puts "completing release [ #{version} ]"
+
+  release_branch = "release/#{version}"
+  git_switch_branch(branch: develop_branch)
+  git_merge_branch(branch: release_branch)
+
+  git_switch_branch(branch: master_branch)
+  git_merge_branch(branch: release_branch)
+  git_create_tag(name: version)
+
+  git_delete_branch(branch: release_branch)
+  git_remove_remote_branch(remote: "origin", branch: release_branch)
+
+  push_to_git_remote(
+    remote: 'origin',         # optional, default: 'origin'
+    local_branch: develop_branch,  # optional, aliased by 'branch', default: 'master'
+    remote_branch: develop_branch, # optional, default is set to local_branch
+    force: false,              # optional, default: false
+    # tags: false               # optional, default: true
+  )
+
+  push_to_git_remote(
+    remote: 'origin',         # optional, default: 'origin'
+    local_branch: master_branch,  # optional, aliased by 'branch', default: 'master'
+    remote_branch: master_branch, # optional, default is set to local_branch
+    force: false,              # optional, default: false
+    tags: true               # optional, default: true
+  )
+
+  #slack(
+  #  message: "completed release '#{version}'",
+  #  default_payloads:[],
+  #  payload: {
+      # 'Git Commit' => commit_msg
+  #  }
+  #)
+
+  end
+
+  desc "Generate configuration for given environment"
+  private_lane :generate_natrium_configuration do |options|
+    projectdir = File.expand_path("..", Dir.pwd)
+    ENV["PROJECT_DIR"] = projectdir
+    ENV["TARGET_NAME"] = options[:target]
+    ENV["INFOPLIST_FILE"] = options[:plist]
+    ENV["CONFIGURATION"] = options[:configuration]
+    sh("/bin/sh \"#{projectdir}/Pods/Natrium/Natrium/script.sh\" #{options[:environment]}")
+  end
+
+
+end

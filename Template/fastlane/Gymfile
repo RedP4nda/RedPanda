@@ -1,0 +1,7 @@
+# For more information about this configuration visit
+# https://github.com/fastlane/gym#gymfile
+
+clean true
+
+output_directory "./build"         # store the ipa in this folder
+output_name "RedPanda_TEMPLATE"          # the name of the ipa file

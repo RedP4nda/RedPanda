@@ -1,0 +1,19 @@
+environments:
+  - Dev
+  - Qualif
+  - Preproduction
+  - Production
+
+infoplist:
+    CFBundleDisplayName:
+        Dev: RedPanda_TEMPLATE_Dev
+        Qualif: RedPanda_TEMPLATE_Qualif
+        Preproduction: RedPanda_TEMPLATE_Preproduction
+        Production: RedPanda_TEMPLATE_Production
+
+variables:
+    baseURL:
+        Dev: "dev.example.com"
+        Qualif: "qualif.example.com"
+        Preproduction: "preproduction.example.com"
+        Production: "production.example.com"
