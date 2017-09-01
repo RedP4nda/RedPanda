@@ -125,7 +125,7 @@
 				DB7C5FB11E28D7020079B437 /* build-config.yml */,
 				DB29D1E31DEAF245006792E4 /* README.md */,
 				DBB7843D1DACFBE40020E254 /* App */,
-				DBB784521DACFBE40020E254 /* Tests */,
+				DBB784521DACFBE40020E254 /* RedPanda_TEMPLATETests */,
 				DB29D1E21DEAF22B006792E4 /* fastlane */,
 				DB29D1E61DEAF267006792E4 /* Rambafile */,
 				DB29D1E71DEAF270006792E4 /* sonar-project.properties */,
@@ -158,14 +158,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		DBB784521DACFBE40020E254 /* Tests */ = {
+		DBB784521DACFBE40020E254 /* RedPanda_TEMPLATETests */ = {
 			isa = PBXGroup;
 			children = (
 				DBB784551DACFBE40020E254 /* Info.plist */,
 				AEF5B35BF971065626971460 /* Modules */,
 				DB8326A41E3B8BC500A14C93 /* ExampleTest.swift */,
 			);
-			path = Tests;
+			path = RedPanda_TEMPLATETests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,13 +515,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = NO;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = RedPanda_TEMPLATETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.appTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedPanda_TEMPLATE.app/RedPanda_TEMPLATE";
 			};
 			name = Debug;
 		};
@@ -532,12 +531,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = NO;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = RedPanda_TEMPLATETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.appTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedPanda_TEMPLATE.app/RedPanda_TEMPLATE";
 			};
 			name = AdHoc;
 		};
@@ -612,12 +610,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = NO;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = RedPanda_TEMPLATETests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletribe.RedPanda.appTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedPanda_TEMPLATE.app/RedPanda_TEMPLATE";
 			};
 			name = Release;
 		};

@@ -6,11 +6,13 @@ module RedPanda
     def self.rename_project(project_name)
         path = project_name.shellescape
         rename_files_command = "find #{path} -name 'RedPanda_TEMPLATE.xc*' -print0 | xargs -0 rename --subst-all 'RedPanda_TEMPLATE' #{path} > /dev/null"
+        rename_test_folder_command = "find #{path} -type d -name 'RedPanda_TEMPLATETests' -print0 | xargs -0 rename --subst-all 'RedPanda_TEMPLATE' #{path} > /dev/null"
         rename_strings_command = "ack --literal --files-with-matches 'RedPanda_TEMPLATE' #{path} --print0 | xargs -0 sed -i '' 's/RedPanda_TEMPLATE/#{project_name}/g' > /dev/null"
 
         puts "Replacing files and configurations..."
         success = system(rename_files_command)
         success = system(rename_files_command)
+        success = system(rename_test_folder_command) 
         unless success
             puts "command failed with status #{$?.exitstatus}"
             exit

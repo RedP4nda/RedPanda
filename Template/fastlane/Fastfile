@@ -17,6 +17,15 @@ platform :ios do
     scan(scheme: "RedPanda_TEMPLATE")
   end
 
+  lane :metrics do
+    generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: "Debug", environment: "Dev")
+    scan(scheme: "RedPanda_TEMPLATE", code_coverage: true, output_directory: "./reports", fail_build: false)
+    slather(cobertura_xml: true, jenkins: true, scheme: "RedPanda_TEMPLATE", build_directory: "./DerivedData", output_directory: "./reports", proj: "./RedPanda_TEMPLATE.xcodeproj")
+    sh("cd .. && lizard ./RedPanda_TEMPLATE -l swift --xml > ./reports/lizard-report.xml")
+    swiftlint(output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
+    sonar
+  end
+
   desc "Build AdHoc application"
   lane :build_adhoc do |options|
     configuration = "AdHoc"

@@ -7,8 +7,6 @@ master_branch      = "master"
 develop_branch     = "develop"
 
 platform :ios do
-  before_all do
-  end
 
   private_lane :bootstrap_redpanda do
     sh("bundle install --gemfile ../Gemfile")
@@ -37,17 +35,9 @@ platform :ios do
     git_create_branch(to:develop_branch, from:master_branch)
   end
 
-  lane :metrics do
-    scan(scheme: "[SCHEME]", code_coverage: true, xcargs: "-derivedDataPath ./DerivedData", output_directory: "./reports")
-    slather(cobertura_xml: true, jenkins: true, scheme: "[SCHEME]", build_directory: "./DerivedData", output_directory: "./reports", proj: "./[PROJECT].xcodeproj")
-    sh("cd .. && lizard ./[SOURCE_FOLDER] -l swift --xml > ./reports/lizard-report.xml")
-    swiftlint(output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
-    sonar
-  end
-
   lane :clean do
     clear_derived_data
-    sh("cd ../build/ && rm -rf *")
+    sh("rm -rf ../build/* || true")
   end
 
 # Git Flow
