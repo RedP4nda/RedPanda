@@ -12,7 +12,7 @@ module RedPanda
         puts "Replacing files and configurations..."
         success = system(rename_files_command)
         success = system(rename_files_command)
-        success = system(rename_test_folder_command) 
+        success = system(rename_test_folder_command)
         unless success
             puts "command failed with status #{$?.exitstatus}"
             exit

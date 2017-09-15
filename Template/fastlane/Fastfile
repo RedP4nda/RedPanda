@@ -13,8 +13,8 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
     cocoapods
-    generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: "Debug", environment: "Dev")
-    scan(scheme: "RedPanda_TEMPLATE")
+    generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: "Debug", environment: "Dev", derived_data_path: "./DerivedData")
+    scan(scheme: "RedPanda_TEMPLATE", code_coverage: true, output_directory: "./reports", fail_build: false)
   end
 
   lane :metrics do
@@ -31,7 +31,7 @@ platform :ios do
     configuration = "AdHoc"
     cocoapods
     generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: configuration, environment: options[:environment])
-    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration)
+    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration, export_method: "ad-hoc")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
@@ -40,7 +40,7 @@ platform :ios do
     configuration = "Release"
     cocoapods
     generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: configuration, environment: "Production")
-    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration) # Build your app - more options available
+    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration, export_method: "app-store") # Build your app - more options available
     ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
     pilot(distribute_external: false)
   end
@@ -50,7 +50,7 @@ platform :ios do
     configuration = "Release"
     cocoapods
     generate_natrium_configuration(target: "RedPanda_TEMPLATE", plist: "App/Supporting\ Files/Info.plist", configuration: configuration, environment: "Production")
-    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration) # Build your app - more options available
+    gym(scheme: "RedPanda_TEMPLATE", configuration: configuration, export_method: "app-store") # Build your app - more options available
   end
 
 

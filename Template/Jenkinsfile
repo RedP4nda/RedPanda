@@ -1,0 +1,26 @@
+node('iOS Node') {
+
+
+  stage('Checkout') {
+    checkout scm
+    sh 'bundle install'
+  }
+
+  stage('Build') {
+  }
+
+  stage('Tests') {
+    sh 'echo $PATH'
+    sh 'fastlane test'
+    junit 'reports/**/*.junit'
+  }
+
+  stage('Sonar') {
+    sh 'fastlane metrics'
+  }
+
+  stage('AdHoc') {
+    sh 'fastlane build_adhoc environment:Dev'
+    archive 'build/**/*.ipa'
+  }
+}
