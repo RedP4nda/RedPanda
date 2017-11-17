@@ -6,6 +6,7 @@ use_frameworks!
 
 def redpanda
   pod 'RPFramework', '~> 0.9'
+  pod 'SwiftLint'
 end
 
 def config
@@ -20,6 +21,23 @@ def networking
     pod 'RPHTTPServiceClient', '~> 0.9'
     pod 'RPImageLoader/KingFisher', '~> 0.9'
 end
+
+def ui
+   pod 'IBAnimatable', '4.2.0'
+   pod 'Hero', '1.0.0-alpha.4'
+   pod 'RPImageLoader/KingFisher'
+end
+
+def tests
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'ObjectMapper', '2.2.7'
+end
+
+def uitests
+    pod 'SnappyTestCase'
+end
+
 
 target 'RedPanda_TEMPLATE' do
   redpanda
